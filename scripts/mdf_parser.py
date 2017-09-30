@@ -30,15 +30,15 @@ def read_html_data(fname):
 
 def process_buffer(buf):
     tnode = ET.fromstring(buf)
-    # print tnode[0].text.strip()
-    province_id = tnode[1].text.strip()
-    province_name = tnode[2].text.strip()
-    regency_id = province_id + tnode[3].text.strip()
-    regency_name = tnode[4].text.strip()
-    district_id = regency_id + tnode[5].text.strip()
-    district_name = tnode[6].text.strip()
-    village_id = district_id + tnode[7].text.strip()
-    village_name = tnode[8].text.strip()
+    # print tnode[0].text.encode('utf8').strip()
+    province_id = tnode[1].text.encode('utf8').strip()
+    province_name = tnode[2].text.encode('utf8').strip()
+    regency_id = province_id + tnode[3].text.encode('utf8').strip()
+    regency_name = tnode[4].text.encode('utf8').strip()
+    district_id = regency_id + tnode[5].text.encode('utf8').strip()
+    district_name = tnode[6].text.encode('utf8').strip()
+    village_id = district_id + tnode[7].text.encode('utf8').strip()
+    village_name = tnode[8].text.encode('utf8').strip()
 
     provinces_dict[province_id] = province_name
     regencies_dict[regency_id] = regency_name
